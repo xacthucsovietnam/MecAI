@@ -17,7 +17,6 @@ import {
 import type { Breakpoint } from 'antd/es/_util/responsiveObserver';
 import { SearchOutlined, ReloadOutlined, LockOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { useAppSelector } from '../../../hooks/useRedux';
 import { useSearchProductsMutation } from '../../../services/productApi';
 import { Product } from '../../../features/product/productSlice';
 import './styles.css';

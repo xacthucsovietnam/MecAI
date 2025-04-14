@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Table as AntTable, Row, Col, Empty, Radio, Dropdown, Button as AntButton, Menu, Space } from 'antd';
 import type { TableProps as AntTableProps } from 'antd/es/table';
 import { useTranslation } from 'react-i18next';
-import { AppstoreOutlined, BarsOutlined, SettingOutlined, SortAscendingOutlined, SortDescendingOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, BarsOutlined, SortAscendingOutlined, SortDescendingOutlined } from '@ant-design/icons';
 import type { RadioChangeEvent } from 'antd';
 import classNames from 'classnames';
 import Button from '../Button';

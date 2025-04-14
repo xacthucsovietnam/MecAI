@@ -18,7 +18,7 @@ const Login: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-  const [login, { isLoading, error }] = useLoginMutation();
+  const [login, { isLoading }] = useLoginMutation();
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
   
   // Get the path to redirect to after login

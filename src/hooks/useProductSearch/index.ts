@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../useRedux';
 import { useSearchProductsMutation, useSearchProductsAuthMutation } from '../../services/productApi';
 import { setSearchParams } from '../../features/product/productSlice';

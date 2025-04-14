@@ -63,11 +63,19 @@ export interface InputProps {
   className?: string;
 }
 
-export interface TextAreaProps extends Omit<InputProps, 'type' | 'addonBefore' | 'addonAfter'> {
-  rows?: number;
-  autoSize?: boolean | { minRows: number; maxRows: number };
+export interface TextAreaProps {
+  placeholder?: string;
+  size?: 'small' | 'middle' | 'large';
+  disabled?: boolean;
+  allowClear?: boolean;
+  maxLength?: number;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  className?: string;
+  rows?: number;
+  autoSize?: boolean | { minRows: number; maxRows: number };
+  prefix?: React.ReactNode;
+  suffix?: React.ReactNode;
 }
 
 const CustomForm: React.FC<FormProps> = ({
@@ -91,8 +99,6 @@ const CustomForm: React.FC<FormProps> = ({
   successMessageKey,
   errorMessageKey,
 }) => {
-  const { t } = useTranslation();
-
   const handleFinish = (values: any) => {
     if (onFinish) {
       onFinish(values);
@@ -162,13 +168,15 @@ const FormItem: React.FC<FormItemProps> = ({
   
   // Translate the placeholder in children if it's an input
   let translatedChildren = children;
+  
   if (React.isValidElement(children)) {
-    const childProps = children.props;
+    const childProps = children.props as Record<string, any>;
     if (childProps.placeholder && typeof childProps.placeholder === 'string') {
-      translatedChildren = React.cloneElement(children, {
+      const newProps = {
         ...childProps,
         placeholder: t(`form.placeholders.${childProps.placeholder}`),
-      });
+      };
+      translatedChildren = React.cloneElement(children, newProps);
     }
   }
   
@@ -254,7 +262,7 @@ const CustomTextArea: React.FC<TextAreaProps> = ({
       maxLength={maxLength}
       value={value}
       onChange={onChange}
-      className={`custom-textarea ${className}`}
+      className={`custom-textarea ${className} custom-textarea-${size}`}
     />
   );
 };

@@ -69,8 +69,37 @@ const CustomButton: React.FC<ButtonProps> = ({
   // Get predefined icon for button types
   const getButtonIcon = () => {
     if (icon) {
-      const IconComponent = Icons[icon as keyof typeof Icons];
-      return <IconComponent />;
+      // Handle icons based on string name
+      switch (icon) {
+        case 'ArrowLeftOutlined':
+          return <Icons.ArrowLeftOutlined />;
+        case 'CheckOutlined':
+          return <Icons.CheckOutlined />;
+        case 'CloseOutlined':
+          return <Icons.CloseOutlined />;
+        case 'CheckCircleOutlined':
+          return <Icons.CheckCircleOutlined />;
+        case 'SendOutlined':
+          return <Icons.SendOutlined />;
+        case 'SearchOutlined':
+          return <Icons.SearchOutlined />;
+        case 'SettingOutlined':
+          return <Icons.SettingOutlined />;
+        case 'UserOutlined':
+          return <Icons.UserOutlined />;
+        case 'LockOutlined':
+          return <Icons.LockOutlined />;
+        case 'HomeOutlined':
+          return <Icons.HomeOutlined />;
+        case 'ShoppingOutlined':
+          return <Icons.ShoppingOutlined />;
+        case 'DashboardOutlined':
+          return <Icons.DashboardOutlined />;
+        case 'LogoutOutlined':
+          return <Icons.LogoutOutlined />;
+        default:
+          return null;
+      }
     }
     
     if (buttonKey) {

@@ -156,7 +156,7 @@ const Notification = {
 
   // Hàm để đóng notification theo key
   close: (key: string) => {
-    notification.close(key);
+    notification.destroy(key);
   },
 
   // Hàm để đóng tất cả các notifications đang hiển thị

@@ -88,8 +88,8 @@ const SelectBox: React.FC<SelectBoxProps> = ({
     : notFoundContent || t(`${translationPrefix}.messages.noData`);
   
   // Process options with translation if needed
-  const processOptions = (optionsList: SelectOption[]) => {
-    return optionsList.map(option => {
+  const processOptions = (optionsList: SelectOption[]): SelectOption[] => {
+    return optionsList.map((option: SelectOption) => {
       // Translate option label if needed
       const translatedLabel = translateOptions && typeof option.label === 'string' && option.key
         ? t(`${translationPrefix}.options.${option.key}`)
@@ -111,7 +111,7 @@ const SelectBox: React.FC<SelectBoxProps> = ({
   // Group options by groupName if provided
   const groupedOptions: Record<string, SelectOption[]> = {};
   
-  processedOptions.forEach(option => {
+  processedOptions.forEach((option: SelectOption) => {
     if (option.groupName) {
       if (!groupedOptions[option.groupName]) {
         groupedOptions[option.groupName] = [];

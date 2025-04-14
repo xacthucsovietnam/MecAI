@@ -1,4 +1,3 @@
-import React from 'react';
 import { ConfigProvider } from 'antd';
 import viVN from 'antd/lib/locale/vi_VN';
 import enUS from 'antd/lib/locale/en_US';

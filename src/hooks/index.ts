@@ -1,15 +1,17 @@
 import useUIComponents from './useUIComponents';
-import useRedux from './useRedux';
+import { useAppDispatch, useAppSelector } from './useRedux';
 import useNotification from './useNotification';
 
 export {
   useUIComponents,
-  useRedux,
+  useAppDispatch,
+  useAppSelector,
   useNotification
 };
 
 export default {
   useUIComponents,
-  useRedux,
+  useAppDispatch,
+  useAppSelector,
   useNotification
 }; 

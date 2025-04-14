@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import './styles.css';
 
 export type ModalSize = 'small' | 'middle' | 'large';
-export type ModalType = 'default' | 'success' | 'info' | 'warning' | 'error';
+export type ModalVariant = 'default' | 'success' | 'info' | 'warning' | 'error';
 
 interface CustomModalProps {
   visible: boolean;
@@ -27,7 +27,7 @@ interface CustomModalProps {
   closable?: boolean;
   className?: string;
   modalSize?: ModalSize;
-  modalType?: ModalType;
+  modalType?: ModalVariant;
   titleKey?: string;
   okTextKey?: string;
   cancelTextKey?: string;
@@ -43,6 +43,17 @@ interface CustomModalProps {
   };
 }
 
+type ModalStaticFunction = (config: any) => void;
+
+interface CustomModalType {
+  (props: CustomModalProps): React.ReactElement;
+  success: ModalStaticFunction;
+  error: ModalStaticFunction;
+  warning: ModalStaticFunction;
+  info: ModalStaticFunction;
+  confirm: ModalStaticFunction;
+}
+
 const getModalWidth = (size: ModalSize): number => {
   switch (size) {
     case 'small':
@@ -56,7 +67,8 @@ const getModalWidth = (size: ModalSize): number => {
   }
 };
 
-const Modal: React.FC<CustomModalProps> = ({
+// Create base Modal component
+const InternalModal: React.FC<CustomModalProps> = ({
   visible,
   title,
   children,
@@ -164,7 +176,10 @@ const Modal: React.FC<CustomModalProps> = ({
   );
 };
 
-// Create common modal types for convenience
+// Create the Modal object with static methods
+const Modal = InternalModal as unknown as CustomModalType;
+
+// Static methods
 Modal.success = ({ title, content, titleKey, ...props }: any) => {
   const { t } = useTranslation();
   const translatedTitle = titleKey ? t(`modal.titles.${titleKey}`) : title;

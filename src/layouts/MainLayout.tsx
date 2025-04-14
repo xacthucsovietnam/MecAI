@@ -7,24 +7,21 @@ import {
   DashboardOutlined, 
   ShoppingOutlined, 
   LogoutOutlined,
-  LoginOutlined,
   HomeOutlined,
-  UserOutlined
 } from '@ant-design/icons';
 import { useAppDispatch, useAppSelector } from '../hooks/useRedux';
 import { logout } from '../features/auth/authSlice';
 import type { MenuProps } from 'antd';
 import './MainLayout.css';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Footer } = Layout;
 
 interface MainLayoutProps {
-  showLoginButton?: boolean;
 }
 
 type MenuItem = Required<MenuProps>['items'][number];
 
-const MainLayout: React.FC<MainLayoutProps> = ({ showLoginButton = false }) => {
+const MainLayout: React.FC<MainLayoutProps> = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();

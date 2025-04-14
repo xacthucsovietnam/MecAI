@@ -1,4 +1,4 @@
-import { Notification, NotificationConfig } from '../components/Notification';
+import Notification, { NotificationConfig } from '../components/Notification';
 import { useTranslation } from 'react-i18next';
 
 /**
