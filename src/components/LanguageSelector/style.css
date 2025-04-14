@@ -1,0 +1,8 @@
+.language-selector {
+  display: inline-flex;
+  align-items: center;
+}
+
+.language-select {
+  min-width: 120px;
+} 

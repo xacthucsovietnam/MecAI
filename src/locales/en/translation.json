@@ -1,0 +1,79 @@
+{
+  "common": {
+    "welcome": "Welcome to MeCAI",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "search": "Search",
+    "filter": "Filter",
+    "back": "Back",
+    "next": "Next",
+    "loading": "Loading...",
+    "active": "Active",
+    "pending": "Pending",
+    "pageNotFound": "Sorry, the page you visited does not exist.",
+    "backHome": "Back Home"
+  },
+  "auth": {
+    "loginTitle": "Log in to your account",
+    "registerTitle": "Create a new account",
+    "forgotPasswordTitle": "Recover your password",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPassword": "Confirm password",
+    "rememberMe": "Remember me",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?",
+    "resetPasswordInstructions": "Enter your email to receive password reset instructions"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome Back",
+    "summary": "Summary",
+    "statistics": "Statistics",
+    "recentActivity": "Recent Activity"
+  },
+  "digitalAuth": {
+    "title": "Digital Authentication",
+    "list": "Digital Authentication List",
+    "create": "Create New Digital Authentication",
+    "details": "Digital Authentication Details",
+    "status": "Status",
+    "date": "Creation Date",
+    "type": "Authentication Type"
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidEmail": "Invalid email address",
+    "passwordTooShort": "Password must be at least 6 characters",
+    "passwordsDontMatch": "Passwords don't match"
+  },
+  "notifications": {
+    "success": "Success!",
+    "error": "An error occurred!",
+    "loginSuccess": "Logged in successfully!",
+    "registerSuccess": "Registered successfully!",
+    "passwordResetSent": "Password reset instructions have been sent to your email"
+  },
+  "product": {
+    "list": "Product List",
+    "name": "Product Name",
+    "category": "Category",
+    "mainCategory": "Main Category",
+    "search": "Search products"
+  },
+  "language": {
+    "vietnamese": "Vietnamese",
+    "english": "English",
+    "changeLanguage": "Change Language"
+  }
+} 

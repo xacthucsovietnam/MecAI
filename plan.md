@@ -83,7 +83,7 @@ src/
 
 ## Phần 2: Thiết Lập Redux, i18n và Routing
 
-### Bước 5: Thiết lập Redux Toolkit và RTK Query
+### Bước 5: Thiết lập Redux Toolkit và RTK Query --> OK
 
 **Mô tả:** Cấu hình Redux store và các RTK Query services để quản lý state và gọi API.
 
@@ -115,7 +115,7 @@ export type AppDispatch = typeof store.dispatch;
 
 **Prompt:** "Thiết lập Redux Toolkit và RTK Query cho dự án, bao gồm cấu hình store và base API slice"
 
-### Bước 6: Thiết lập i18next cho đa ngôn ngữ
+### Bước 6: Thiết lập i18next cho đa ngôn ngữ --> OK
 
 **Mô tả:** Cấu hình i18next để hỗ trợ Tiếng Việt và Tiếng Anh, với mặc định là Tiếng Việt.
 
@@ -168,7 +168,7 @@ export default i18n;
 
 **Prompt:** "Thiết lập i18next cho đa ngôn ngữ (Tiếng Việt và Tiếng Anh) với các file ngôn ngữ và custom hook để chuyển đổi ngôn ngữ"
 
-### Bước 7: Thiết lập React Router
+### Bước 7: Thiết lập React Router --> OK
 
 **Mô tả:** Cấu hình React Router để quản lý điều hướng trong ứng dụng.
 

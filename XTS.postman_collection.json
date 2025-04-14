@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "f5c8b58f-3553-4784-b9b1-8752a2e2008b",
+		"name": "XTS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1231872"
+	},
+	"item": [
+		{
+			"name": "Login 14.225.23.190",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Y2xpZW50OnNlY3JldA==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "apilogin",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "apilogin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://14.225.23.190:3638/app/rest/v2/oauth/token",
+					"protocol": "http",
+					"host": [
+						"14",
+						"225",
+						"23",
+						"190"
+					],
+					"port": "3638",
+					"path": [
+						"app",
+						"rest",
+						"v2",
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchListProduct 14.225.23.190",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"data\":\r\n    {\r\n                \"tenNhom\": \"Rau củ\",\r\n                \"tenNhomChinh\": \"Rau củ\",\r\n                \"ten\": \"Cải\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://14.225.23.190:3638/app/rest/v2/services/wcbcore_PublicApiService/searchListProduct",
+					"protocol": "http",
+					"host": [
+						"14",
+						"225",
+						"23",
+						"190"
+					],
+					"port": "3638",
+					"path": [
+						"app",
+						"rest",
+						"v2",
+						"services",
+						"wcbcore_PublicApiService",
+						"searchListProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authen searchListProduct 14.225.23.190",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ff145a5f-269e-4bad-85f7-12d07d980e93",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"data\":\r\n    {\r\n                \"tenNhom\": \"Rau củ\",\r\n                \"tenNhomChinh\": \"Rau củ\",\r\n                \"ten\": \"Cải\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://14.225.23.190:3638/app/rest/v2/services/wcbcore_PublicApiService/searchListPrAuthen",
+					"protocol": "http",
+					"host": [
+						"14",
+						"225",
+						"23",
+						"190"
+					],
+					"port": "3638",
+					"path": [
+						"app",
+						"rest",
+						"v2",
+						"services",
+						"wcbcore_PublicApiService",
+						"searchListPrAuthen"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

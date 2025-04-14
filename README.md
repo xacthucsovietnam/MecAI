@@ -1,6 +1,6 @@
-# Hệ Thống Xác Thực Số - Frontend
+# Hệ thông MeCAI - Frontend
 
-Dự án Frontend cho hệ thống Xác Thực Số, được xây dựng với các công nghệ hiện đại.
+Dự án Frontend cho hệ thống MeCAI, được xây dựng với các công nghệ hiện đại.
 
 ## Công Nghệ Sử Dụng
 

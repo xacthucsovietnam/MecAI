@@ -1,0 +1,79 @@
+{
+  "common": {
+    "welcome": "Chào mừng đến với MeCAI",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "logout": "Đăng xuất",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "forgotPassword": "Quên mật khẩu",
+    "submit": "Gửi",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "confirm": "Xác nhận",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "loading": "Đang tải...",
+    "active": "Đã kích hoạt",
+    "pending": "Đang chờ",
+    "pageNotFound": "Xin lỗi, trang bạn truy cập không tồn tại.",
+    "backHome": "Về trang chủ"
+  },
+  "auth": {
+    "loginTitle": "Đăng nhập vào tài khoản",
+    "registerTitle": "Tạo tài khoản mới",
+    "forgotPasswordTitle": "Khôi phục mật khẩu",
+    "emailPlaceholder": "Nhập email của bạn",
+    "passwordPlaceholder": "Nhập mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "rememberMe": "Ghi nhớ đăng nhập",
+    "dontHaveAccount": "Chưa có tài khoản?",
+    "alreadyHaveAccount": "Đã có tài khoản?",
+    "resetPasswordInstructions": "Nhập email của bạn để nhận hướng dẫn đặt lại mật khẩu"
+  },
+  "dashboard": {
+    "title": "Bảng điều khiển",
+    "welcome": "Chào mừng trở lại",
+    "summary": "Tổng quan",
+    "statistics": "Thống kê",
+    "recentActivity": "Hoạt động gần đây"
+  },
+  "digitalAuth": {
+    "title": "Xác thực số",
+    "list": "Danh sách xác thực số",
+    "create": "Tạo xác thực số mới",
+    "details": "Chi tiết xác thực số",
+    "status": "Trạng thái",
+    "date": "Ngày tạo",
+    "type": "Loại xác thực"
+  },
+  "validation": {
+    "required": "Trường này là bắt buộc",
+    "invalidEmail": "Email không hợp lệ",
+    "passwordTooShort": "Mật khẩu phải có ít nhất 6 ký tự",
+    "passwordsDontMatch": "Mật khẩu không khớp"
+  },
+  "notifications": {
+    "success": "Thành công!",
+    "error": "Đã xảy ra lỗi!",
+    "loginSuccess": "Đăng nhập thành công!",
+    "registerSuccess": "Đăng ký thành công!",
+    "passwordResetSent": "Hướng dẫn đặt lại mật khẩu đã được gửi đến email của bạn"
+  },
+  "product": {
+    "list": "Danh sách sản phẩm",
+    "name": "Tên sản phẩm",
+    "category": "Danh mục",
+    "mainCategory": "Danh mục chính",
+    "search": "Tìm kiếm sản phẩm"
+  },
+  "language": {
+    "vietnamese": "Tiếng Việt",
+    "english": "Tiếng Anh",
+    "changeLanguage": "Thay đổi ngôn ngữ"
+  }
+} 
