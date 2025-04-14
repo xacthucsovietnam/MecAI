@@ -1,8 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { RootState } from '../store';
+import { API_URL } from '../config';
 
 // Base URL from the Postman collection
-const baseUrl = 'http://14.225.23.190:3638/app/rest/v2';
+const baseUrl = API_URL;
 
 export const apiSlice = createApi({
   reducerPath: 'api',

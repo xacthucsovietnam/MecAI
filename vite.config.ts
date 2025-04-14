@@ -27,7 +27,15 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    open: true
+    open: true,
+    proxy: {
+      '/api': {
+        target: 'http://14.225.23.190:3638',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '/app/rest/v2'),
+        secure: false
+      }
+    }
   },
   build: {
     outDir: 'dist',
