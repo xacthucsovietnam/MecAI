@@ -1,0 +1,135 @@
+.custom-table-container {
+  width: 100%;
+}
+
+.custom-table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.custom-table-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.custom-table-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.custom-table-action-button {
+  margin-right: 8px;
+}
+
+/* Custom dropdown menus */
+.custom-table-column-item,
+.custom-table-sort-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.custom-table-sort-item {
+  justify-content: space-between;
+}
+
+/* Table styles */
+.custom-table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.custom-table .ant-table-thead > tr > th {
+  background-color: #fafafa;
+  font-weight: 500;
+}
+
+.custom-table .ant-table-tbody > tr.ant-table-row:hover > td {
+  background-color: #e6f7ff;
+}
+
+/* Card view styles */
+.custom-table-card-view {
+  margin: 0 -8px;
+}
+
+.custom-table-card {
+  height: 100%;
+  transition: all 0.3s;
+}
+
+.custom-table-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.custom-table-card-content-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-table-card-content-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.custom-table-card-field {
+  margin-bottom: 8px;
+}
+
+.custom-table-card-field-label {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.65);
+  margin-right: 8px;
+}
+
+.custom-table-card-field-value {
+  color: rgba(0, 0, 0, 0.85);
+  word-break: break-word;
+}
+
+/* Empty state */
+.ant-empty {
+  margin: 32px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .custom-table-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .custom-table-actions {
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  
+  /* Make card view columns full width on mobile */
+  .custom-table-card-content-horizontal .custom-table-card-field {
+    width: 100%;
+  }
+  
+  /* Adjust table for mobile */
+  .custom-table .ant-table-content {
+    overflow-x: auto;
+  }
+  
+  /* Enhance readability on mobile */
+  .custom-table-card-field-label {
+    display: block;
+    margin-bottom: 4px;
+  }
+  
+  .custom-table-card-field-value {
+    display: block;
+  }
+} 

@@ -75,5 +75,40 @@
     "vietnamese": "Vietnamese",
     "english": "English",
     "changeLanguage": "Change Language"
+  },
+  "notification": {
+    "defaults": {
+      "success": "Success",
+      "error": "Error",
+      "info": "Information",
+      "warning": "Warning"
+    },
+    "messages": {
+      "formSuccess": "Form submitted successfully",
+      "formError": "Error submitting form",
+      "apiSuccess": "Operation successful",
+      "apiError": "Operation failed",
+      "loginSuccess": "Login successful",
+      "loginError": "Login failed",
+      "registerSuccess": "Registration successful",
+      "registerError": "Registration failed",
+      "logoutSuccess": "Logout successful",
+      "saveSuccess": "Saved successfully",
+      "saveError": "Save failed",
+      "deleteSuccess": "Deleted successfully",
+      "deleteError": "Delete failed",
+      "updateSuccess": "Updated successfully",
+      "updateError": "Update failed",
+      "uploadSuccess": "Upload successful",
+      "uploadError": "Upload failed",
+      "downloadSuccess": "Download successful",
+      "downloadError": "Download failed",
+      "sessionExpired": "Session expired"
+    },
+    "descriptions": {
+      "loginSuccess": "Welcome back!",
+      "registerSuccess": "Your account has been created successfully",
+      "sessionExpired": "Please log in again to continue"
+    }
   }
 } 

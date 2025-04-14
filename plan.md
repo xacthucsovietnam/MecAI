@@ -218,7 +218,7 @@ export const routes: RouteObject[] = [
 
 ## Phần 3: Phát Triển UI Components và Layouts
 
-### Bước 8: Xây dựng Components dùng chung
+### Bước 8: Xây dựng Components dùng chung  --> OK
 
 **Mô tả:** Phát triển các components UI dùng chung trong toàn bộ ứng dụng.
 
@@ -265,7 +265,7 @@ export default Button;
 
 **Prompt:** "Phát triển các common UI components dùng chung cho ứng dụng dựa trên Ant Design, bao gồm Button, Form, Card, Alert, Modal và Table components"
 
-### Bước 9: Xây dựng Layouts
+### Bước 9: Xây dựng Layouts --> OK
 
 **Mô tả:** Phát triển các layout chính cho ứng dụng.
 

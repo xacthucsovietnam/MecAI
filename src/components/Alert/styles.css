@@ -1,0 +1,81 @@
+.custom-alert {
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  border: none;
+}
+
+.custom-alert .ant-alert-message {
+  font-weight: 500;
+}
+
+.custom-alert .ant-alert-description {
+  margin-top: 8px;
+  display: block;
+}
+
+/* Alert with only message (no description) */
+.custom-alert:not(.ant-alert-with-description) {
+  padding: 8px 16px;
+}
+
+/* Alert with description */
+.custom-alert.ant-alert-with-description {
+  padding: 16px;
+}
+
+/* Alert variants */
+.custom-alert-success {
+  background-color: #f6ffed;
+  border-left: 4px solid #52c41a;
+}
+
+.custom-alert-info {
+  background-color: #e6f7ff;
+  border-left: 4px solid #1890ff;
+}
+
+.custom-alert-warning {
+  background-color: #fffbe6;
+  border-left: 4px solid #faad14;
+}
+
+.custom-alert-error {
+  background-color: #fff2f0;
+  border-left: 4px solid #ff4d4f;
+}
+
+/* Alert with action */
+.custom-alert .ant-alert-action {
+  margin-left: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+  .custom-alert {
+    font-size: 13px;
+  }
+  
+  .custom-alert:not(.ant-alert-with-description) {
+    padding: 6px 12px;
+  }
+  
+  .custom-alert.ant-alert-with-description {
+    padding: 12px;
+  }
+  
+  .custom-alert .ant-alert-message {
+    font-size: 14px;
+  }
+  
+  .custom-alert .ant-alert-description {
+    font-size: 12px;
+  }
+  
+  /* For mobile, make actions display below on smaller screens */
+  .custom-alert .ant-alert-action {
+    margin-left: 0;
+    margin-top: 8px;
+    display: block;
+  }
+} 

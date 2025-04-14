@@ -75,5 +75,40 @@
     "vietnamese": "Tiếng Việt",
     "english": "Tiếng Anh",
     "changeLanguage": "Thay đổi ngôn ngữ"
+  },
+  "notification": {
+    "defaults": {
+      "success": "Thành công",
+      "error": "Lỗi",
+      "info": "Thông tin",
+      "warning": "Cảnh báo"
+    },
+    "messages": {
+      "formSuccess": "Gửi biểu mẫu thành công",
+      "formError": "Lỗi khi gửi biểu mẫu",
+      "apiSuccess": "Thao tác thành công",
+      "apiError": "Thao tác thất bại",
+      "loginSuccess": "Đăng nhập thành công",
+      "loginError": "Đăng nhập thất bại",
+      "registerSuccess": "Đăng ký thành công",
+      "registerError": "Đăng ký thất bại",
+      "logoutSuccess": "Đăng xuất thành công",
+      "saveSuccess": "Lưu thành công",
+      "saveError": "Lưu thất bại",
+      "deleteSuccess": "Xóa thành công",
+      "deleteError": "Xóa thất bại",
+      "updateSuccess": "Cập nhật thành công",
+      "updateError": "Cập nhật thất bại",
+      "uploadSuccess": "Tải lên thành công",
+      "uploadError": "Tải lên thất bại",
+      "downloadSuccess": "Tải xuống thành công",
+      "downloadError": "Tải xuống thất bại",
+      "sessionExpired": "Phiên làm việc đã hết hạn"
+    },
+    "descriptions": {
+      "loginSuccess": "Chào mừng quay trở lại!",
+      "registerSuccess": "Tài khoản của bạn đã được tạo thành công",
+      "sessionExpired": "Vui lòng đăng nhập lại để tiếp tục"
+    }
   }
 } 

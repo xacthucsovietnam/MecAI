@@ -1,0 +1,85 @@
+.custom-card {
+  width: 100%;
+  border-radius: 8px;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.custom-card-clickable {
+  cursor: pointer;
+}
+
+.custom-card-clickable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card variants */
+.custom-card-primary .ant-card-head {
+  background-color: #1890ff;
+  color: #fff;
+}
+
+.custom-card-success .ant-card-head {
+  background-color: #52c41a;
+  color: #fff;
+}
+
+.custom-card-warning .ant-card-head {
+  background-color: #faad14;
+  color: #fff;
+}
+
+.custom-card-danger .ant-card-head {
+  background-color: #ff4d4f;
+  color: #fff;
+}
+
+.custom-card-info .ant-card-head {
+  background-color: #13c2c2;
+  color: #fff;
+}
+
+/* Card meta */
+.custom-card-meta {
+  display: flex;
+  align-items: flex-start;
+}
+
+.custom-card-meta .ant-card-meta-title {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.custom-card-meta .ant-card-meta-description {
+  color: rgba(0, 0, 0, 0.45);
+  line-height: 1.5;
+}
+
+/* Alert inside card */
+.custom-card-alert {
+  margin-bottom: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+  .custom-card {
+    border-radius: 6px;
+  }
+  
+  .custom-card .ant-card-head-title {
+    font-size: 16px;
+  }
+  
+  .custom-card .ant-card-body {
+    padding: 16px;
+  }
+  
+  .custom-card-meta .ant-card-meta-title {
+    font-size: 14px;
+  }
+  
+  .custom-card-meta .ant-card-meta-description {
+    font-size: 12px;
+  }
+} 

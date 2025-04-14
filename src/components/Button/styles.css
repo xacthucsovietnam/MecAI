@@ -1,0 +1,99 @@
+.custom-button {
+  border-radius: 4px;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-button-block {
+  width: 100%;
+}
+
+/* Button sizes */
+.custom-button-large {
+  min-height: 48px;
+  padding: 8px 24px;
+  font-size: 16px;
+}
+
+.custom-button-middle {
+  min-height: 40px;
+  padding: 6px 16px;
+  font-size: 14px;
+}
+
+.custom-button-small {
+  min-height: 32px;
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+/* Button variants */
+.custom-button-secondary {
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.custom-button-secondary:hover:not(:disabled) {
+  background-color: #f5f5f5;
+  border-color: #d9d9d9;
+}
+
+.custom-button-success {
+  background-color: #52c41a;
+  border-color: #52c41a;
+  color: #fff;
+}
+
+.custom-button-success:hover:not(:disabled) {
+  background-color: #73d13d;
+  border-color: #73d13d;
+}
+
+.custom-button-warning {
+  background-color: #faad14;
+  border-color: #faad14;
+  color: #fff;
+}
+
+.custom-button-warning:hover:not(:disabled) {
+  background-color: #ffc53d;
+  border-color: #ffc53d;
+}
+
+/* Icon spacing */
+.button-icon-left {
+  margin-right: 8px;
+}
+
+.button-icon-right {
+  margin-left: 8px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 576px) {
+  .custom-button-large {
+    min-height: 44px;
+    padding: 6px 18px;
+    font-size: 15px;
+  }
+  
+  .custom-button-middle {
+    min-height: 36px;
+    padding: 5px 14px;
+    font-size: 13px;
+  }
+  
+  .custom-button-small {
+    min-height: 28px;
+    padding: 3px 10px;
+    font-size: 12px;
+  }
+  
+  /* For mobile, make buttons wider and more tappable */
+  .custom-button:not(.custom-button-link):not(.custom-button-text) {
+    min-width: 80px;
+  }
+} 
