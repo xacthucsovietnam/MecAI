@@ -1,68 +1,142 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Common reset & base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #f0f2f5;
+  overflow-x: hidden;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+#root {
+  height: 100%;
+  width: 100%;
 }
 
-body {
-  margin: 0;
+/* Global loading component */
+.global-loading {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  width: 100%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(24, 144, 255, 0.2);
+  border-top-color: #1890ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: rgba(0, 0, 0, 0.85);
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+/* Layout styles */
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Colors */
+.text-primary {
+  color: #1890ff;
+}
+
+.text-success {
+  color: #52c41a;
+}
+
+.text-warning {
+  color: #faad14;
+}
+
+.text-danger {
+  color: #f5222d;
+}
+
+/* Utilities */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+/* Responsive utility classes */
+@media (max-width: 576px) {
+  .hide-xs {
+    display: none !important;
   }
-  a:hover {
-    color: #747bff;
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .hide-sm {
+    display: none !important;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .hide-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .hide-lg {
+    display: none !important;
   }
 }

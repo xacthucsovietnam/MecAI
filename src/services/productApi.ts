@@ -1,32 +1,27 @@
 import { apiSlice } from './apiSlice';
+import { Product, ProductApiResponse } from '../features/product/productSlice';
 
-interface ProductSearchParams {
+// Define the search parameters interface based on the API requirements
+export interface ProductSearchParams {
+  ten?: string;
   tenNhom?: string;
   tenNhomChinh?: string;
-  ten?: string;
 }
 
-interface ProductSearchRequest {
+// Define the search request structure
+export interface ProductSearchRequest {
   data: ProductSearchParams;
 }
 
-interface Product {
-  id: string;
-  ten: string;
-  tenNhom: string;
-  tenNhomChinh: string;
-  // Add other fields as needed based on the actual response
-}
-
-interface ProductSearchResponse {
-  // Define response structure based on actual API response
+// Define the Product search response structure
+export interface ProductSearchResponse {
   products: Product[];
 }
 
 export const productApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    // Public product search endpoint (no auth required)
-    searchProducts: builder.mutation<ProductSearchResponse, ProductSearchParams>({
+    // Public product search endpoint
+    searchProducts: builder.mutation<ProductApiResponse, ProductSearchParams>({
       query: (params) => ({
         url: '/services/wcbcore_PublicApiService/searchListProduct',
         method: 'POST',
@@ -35,7 +30,7 @@ export const productApi = apiSlice.injectEndpoints({
     }),
     
     // Authenticated product search endpoint
-    searchProductsAuth: builder.mutation<ProductSearchResponse, ProductSearchParams>({
+    searchProductsAuth: builder.mutation<ProductApiResponse, ProductSearchParams>({
       query: (params) => ({
         url: '/services/wcbcore_PublicApiService/searchListPrAuthen',
         method: 'POST',

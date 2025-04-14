@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Table as AntTable, Row, Col, Empty, Radio, Dropdown, Button as AntButton, Menu, Space } from 'antd';
+import type { TableProps as AntTableProps } from 'antd/es/table';
 import { useTranslation } from 'react-i18next';
 import { AppstoreOutlined, BarsOutlined, SettingOutlined, SortAscendingOutlined, SortDescendingOutlined } from '@ant-design/icons';
 import type { RadioChangeEvent } from 'antd';
@@ -47,8 +48,8 @@ export interface TableProps {
   scroll?: { x?: number | string; y?: number | string };
   bordered?: boolean;
   showHeader?: boolean;
-  title?: (currentPageData: any[]) => React.ReactNode;
-  footer?: (currentPageData: any[]) => React.ReactNode;
+  title?: AntTableProps<any>['title'];
+  footer?: AntTableProps<any>['footer'];
   onChange?: (pagination: any, filters: any, sorter: any, extra: any) => void;
   onRow?: (record: any, index?: number) => any;
   rowClassName?: (record: any, index: number) => string;
@@ -264,20 +265,25 @@ const Table: React.FC<TableProps> = ({
               size="default"
             >
               <Row gutter={[8, 8]} className={`custom-table-card-content-${cardLayout}`}>
-                {fields.map((field, fieldIndex) => (
-                  <Col
-                    key={fieldIndex}
-                    span={field.span || (cardLayout === 'vertical' ? 24 : 12)}
-                    className="custom-table-card-field"
-                  >
-                    <span className="custom-table-card-field-label">{field.label}:</span>
-                    <span className="custom-table-card-field-value">
-                      {field.render
-                        ? field.render(record[field.key], record, recordIndex)
-                        : record[field.key]}
-                    </span>
-                  </Col>
-                ))}
+                {fields.map((field, fieldIndex) => {
+                  // Determine span based on field or layout
+                  const fieldSpan = 'span' in field ? field.span : (cardLayout === 'vertical' ? 24 : 12);
+                  
+                  return (
+                    <Col
+                      key={fieldIndex}
+                      span={fieldSpan}
+                      className="custom-table-card-field"
+                    >
+                      <span className="custom-table-card-field-label">{field.label}:</span>
+                      <span className="custom-table-card-field-value">
+                        {field.render
+                          ? field.render(record[field.key], record, recordIndex)
+                          : record[field.key]}
+                      </span>
+                    </Col>
+                  );
+                })}
               </Row>
             </Card>
           </Col>

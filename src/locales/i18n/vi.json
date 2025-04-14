@@ -1,0 +1,52 @@
+"product": {
+  "searchName": "Tìm kiếm theo tên sản phẩm",
+  "selectCategory": "Chọn danh mục",
+  "selectMainCategory": "Chọn danh mục chính",
+  "publicDescription": "Duyệt danh mục sản phẩm để tìm những gì bạn cần",
+  "noProducts": "Không tìm thấy sản phẩm nào",
+  "list": "Danh sách sản phẩm",
+  "name": "Tên sản phẩm",
+  "category": "Danh mục",
+  "mainCategory": "Danh mục chính",
+  "description": "Mô tả",
+  "price": "Giá",
+  "image": "Hình ảnh",
+  "unit": "Đơn vị tính",
+  "code": "Mã sản phẩm"
+},
+"categories": {
+  "vegetables": "Rau củ",
+  "meat": "Thịt",
+  "fish": "Cá",
+  "fruit": "Trái cây"
+},
+"error": {
+  "searchFailed": "Tìm kiếm thất bại",
+  "tryAgain": "Vui lòng thử lại sau"
+},
+"pagination": {
+  "total": "Tổng cộng {{total}} mục"
+},
+"common": {
+  "welcome": "Chào mừng đến với MeCAI",
+  "search": "Tìm kiếm",
+  "reset": "Đặt lại",
+  "cancel": "Hủy",
+  "submit": "Gửi",
+  "loading": "Đang tải...",
+  "login": "Đăng nhập",
+  "logout": "Đăng xuất",
+  "public": "Công khai",
+  "authenticated": "Xác thực",
+  "filter": "Lọc",
+  "profile": "Trang cá nhân"
+},
+"menu": {
+  "home": "Trang chủ",
+  "products": "Sản phẩm",
+  "publicProducts": "Sản phẩm công khai",
+  "authProducts": "Sản phẩm đã xác thực"
+},
+"footer": {
+  "allRightsReserved": "Tất cả các quyền được bảo lưu"
+} 

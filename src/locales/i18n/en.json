@@ -1,0 +1,52 @@
+"product": {
+  "name": "Product name",
+  "description": "Description",
+  "price": "Price",
+  "category": "Category",
+  "mainCategory": "Main category",
+  "searchName": "Search by product name",
+  "selectCategory": "Select a category",
+  "selectMainCategory": "Select a main category",
+  "publicDescription": "Browse our product catalog to find what you need",
+  "noProducts": "No products found",
+  "list": "Product List",
+  "image": "Image",
+  "unit": "Unit",
+  "code": "Code"
+},
+"categories": {
+  "vegetables": "Vegetables",
+  "meat": "Meat",
+  "fish": "Fish",
+  "fruit": "Fruit"
+},
+"error": {
+  "searchFailed": "Search failed",
+  "tryAgain": "Please try again later"
+},
+"pagination": {
+  "total": "Total {{total}} items"
+},
+"common": {
+  "welcome": "Welcome to MeCAI",
+  "search": "Search",
+  "reset": "Reset",
+  "cancel": "Cancel",
+  "submit": "Submit",
+  "loading": "Loading...",
+  "login": "Login",
+  "logout": "Logout",
+  "public": "Public",
+  "authenticated": "Authenticated",
+  "filter": "Filter",
+  "profile": "Profile"
+},
+"menu": {
+  "home": "Home",
+  "products": "Products",
+  "publicProducts": "Public Products",
+  "authProducts": "Authenticated Products"
+},
+"footer": {
+  "allRightsReserved": "All Rights Reserved"
+} 

@@ -27,7 +27,7 @@ export interface ButtonProps {
   buttonKey?: 'back' | 'confirm' | 'cancel' | 'accept' | 'submit' | string;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const CustomButton: React.FC<ButtonProps> = ({
   children,
   variant = 'primary',
   size = 'middle',
@@ -130,4 +130,4 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-export default Button; 
+export default CustomButton; 

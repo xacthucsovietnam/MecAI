@@ -1,0 +1,149 @@
+/* Product List Container Styles */
+.product-list-container {
+  width: 100%;
+  height: calc(100vh - 64px); /* Trừ đi chiều cao của header */
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.product-card {
+  flex: 1;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.auth-product-title {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-top: 24px;
+}
+
+.search-form-container {
+  margin: 24px 24px 16px;
+  padding: 16px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.button-row {
+  margin-top: 16px;
+}
+
+.table-container {
+  flex: 1;
+  margin: 0 24px 24px;
+  overflow: auto;
+}
+
+.responsive-table {
+  width: 100%;
+}
+
+/* View toggle section */
+.view-toggle {
+  margin: 0 24px 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Product styling */
+.product-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.product-code {
+  color: #999;
+  font-size: 12px;
+}
+
+.product-price {
+  font-weight: 500;
+  color: #f5222d;
+}
+
+.product-old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 12px;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  flex: 1;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 576px) {
+  .product-list-container {
+    padding: 0;
+    height: auto;
+    overflow: visible;
+  }
+  
+  .product-card {
+    overflow: visible;
+  }
+  
+  .search-form-container,
+  .table-container,
+  .view-toggle {
+    margin: 0 12px 16px;
+  }
+  
+  .auth-product-title {
+    padding: 16px 12px;
+    margin-bottom: 16px;
+  }
+  
+  .auth-product-title h2 {
+    font-size: 24px;
+  }
+  
+  .button-row {
+    justify-content: space-between !important;
+    width: 100%;
+  }
+  
+  .button-row button {
+    width: 48%;
+  }
+  
+  .ant-table-thead > tr > th, 
+  .ant-table-tbody > tr > td {
+    white-space: nowrap;
+    padding: 12px 8px;
+  }
+}
+
+/* Light theme color enhancements */
+.ant-select-selector,
+.ant-input,
+.ant-input-affix-wrapper {
+  border-radius: 4px !important;
+  transition: all 0.3s;
+}
+
+.ant-input-affix-wrapper:hover,
+.ant-input:hover,
+.ant-select-selector:hover {
+  border-color: #1890ff;
+}
+
+.ant-input-affix-wrapper:focus,
+.ant-input:focus,
+.ant-select-selector:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+} 

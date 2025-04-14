@@ -1,66 +1,73 @@
-import { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { RouteObject } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import MainLayout from '../layouts/MainLayout';
 import AuthLayout from '../layouts/AuthLayout';
+import NotFound from '../pages/NotFound';
 
 // Lazy-loaded components for better performance
 const LoginPage = lazy(() => import('../pages/Login'));
-const RegisterPage = lazy(() => import('../pages/Register'));
-const ForgotPasswordPage = lazy(() => import('../pages/ForgotPassword'));
 const DashboardPage = lazy(() => import('../pages/Dashboard'));
-const DigitalAuthListPage = lazy(() => import('../pages/DigitalAuth/List'));
-const DigitalAuthCreatePage = lazy(() => import('../pages/DigitalAuth/Create'));
-const DigitalAuthDetailsPage = lazy(() => import('../pages/DigitalAuth/Details'));
-const NotFoundPage = lazy(() => import('../pages/NotFound'));
+const PublicProductListPage = lazy(() => import('../pages/Products/Public'));
+const AuthProductListPage = lazy(() => import('../pages/Products/Auth'));
+
+// Loading component for lazy-loaded routes
+const Loading = () => (
+  <div className="global-loading">
+    <div className="spinner"></div>
+  </div>
+);
+
+// Wrap lazy component with Suspense
+const withSuspense = (Component: React.LazyExoticComponent<any>) => (
+  <Suspense fallback={<Loading />}>
+    <Component />
+  </Suspense>
+);
 
 export const routes: RouteObject[] = [
-  // Private routes (require authentication)
+  // Main layout routes
   {
     path: '/',
-    element: <PrivateRoute element={<MainLayout />} />,
+    element: <MainLayout />,
     children: [
       {
         index: true,
-        element: <DashboardPage />,
+        element: withSuspense(PublicProductListPage),
       },
       {
-        path: 'digital-auth',
-        children: [
-          {
-            index: true,
-            element: <DigitalAuthListPage />,
-          },
-          {
-            path: 'create',
-            element: <DigitalAuthCreatePage />,
-          },
-          {
-            path: ':id',
-            element: <DigitalAuthDetailsPage />,
-          },
-        ],
+        path: 'products/public',
+        element: withSuspense(PublicProductListPage),
+      },
+      // Authenticated products route
+      {
+        path: 'products/auth',
+        element: <PrivateRoute element={withSuspense(AuthProductListPage)} />,
       },
     ],
   },
   
-  // Public routes (accessible without authentication)
+  // Dashboard routes (all require authentication)
   {
-    path: '/',
-    element: <AuthLayout />,
+    path: '/dashboard',
+    element: <PrivateRoute element={<MainLayout />} />,
     children: [
       {
-        path: 'login',
-        element: <PublicRoute element={<LoginPage />} />,
+        index: true,
+        element: withSuspense(DashboardPage),
       },
+    ],
+  },
+  
+  // Authentication routes
+  {
+    path: '/login',
+    element: <PublicRoute element={<AuthLayout />} restrictAuthenticated={true} />,
+    children: [
       {
-        path: 'register',
-        element: <PublicRoute element={<RegisterPage />} />,
-      },
-      {
-        path: 'forgot-password',
-        element: <PublicRoute element={<ForgotPasswordPage />} />,
+        index: true,
+        element: withSuspense(LoginPage),
       },
     ],
   },
@@ -68,7 +75,7 @@ export const routes: RouteObject[] = [
   // Catch-all route for 404 errors
   {
     path: '*',
-    element: <NotFoundPage />,
+    element: <NotFound />,
   },
 ];
 

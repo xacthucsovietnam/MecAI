@@ -21,7 +21,11 @@
     "active": "Active",
     "pending": "Pending",
     "pageNotFound": "Sorry, the page you visited does not exist.",
-    "backHome": "Back Home"
+    "backHome": "Back Home",
+    "public": "Public",
+    "authenticated": "Authenticated",
+    "reset": "Reset",
+    "profile": "Profile"
   },
   "auth": {
     "loginTitle": "Log in to your account",
@@ -41,6 +45,15 @@
     "summary": "Summary",
     "statistics": "Statistics",
     "recentActivity": "Recent Activity"
+  },
+  "menu": {
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "home": "Home",
+    "products": "Products",
+    "publicProducts": "Public Products", 
+    "authProducts": "Authenticated Products",
+    "logout": "Logout"
   },
   "digitalAuth": {
     "title": "Digital Authentication",
@@ -69,7 +82,21 @@
     "name": "Product Name",
     "category": "Category",
     "mainCategory": "Main Category",
-    "search": "Search products"
+    "search": "Search products",
+    "publicDescription": "Browse our complete product catalog. Please log in to access authenticated products.",
+    "image": "Image",
+    "unit": "Unit",
+    "noProducts": "No products",
+    "price": "Price",
+    "searchName": "Product Name",
+    "selectCategory": "Select Category",
+    "selectMainCategory": "Select Main Category"
+  },
+  "categories": {
+    "vegetables": "Vegetables",
+    "fruit": "Fruit",
+    "meat": "Meat",
+    "fish": "Fish"
   },
   "language": {
     "vietnamese": "Vietnamese",
@@ -110,5 +137,24 @@
       "registerSuccess": "Your account has been created successfully",
       "sessionExpired": "Please log in again to continue"
     }
+  },
+  "buttons": {
+    "viewGrid": "Grid View",
+    "viewTable": "Table View",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "export": "Export",
+    "import": "Import",
+    "details": "View Details",
+    "print": "Print",
+    "refresh": "Refresh"
+  },
+  "pagination": {
+    "total": "Total {total} items"
+  },
+  "error": {
+    "searchFailed": "Search failed",
+    "tryAgain": "Please try again or contact support if the problem persists"
   }
 } 

@@ -1,20 +1,28 @@
 import React from 'react';
 import { Select } from 'antd';
+import { useTranslation } from 'react-i18next';
 import { GlobalOutlined } from '@ant-design/icons';
-import useLanguage from '../../hooks/useLanguage';
-import './style.css';
+import './LanguageSelector.css';
 
 const LanguageSelector: React.FC = () => {
-  const { currentLanguage, changeLanguage, languageOptions } = useLanguage();
+  const { i18n } = useTranslation();
+
+  const handleChange = (value: string) => {
+    i18n.changeLanguage(value);
+  };
 
   return (
     <div className="language-selector">
+      <GlobalOutlined className="language-icon" />
       <Select
-        value={currentLanguage}
-        onChange={(value) => changeLanguage(value)}
-        options={languageOptions}
-        bordered={false}
-        suffixIcon={<GlobalOutlined />}
+        defaultValue={i18n.language}
+        onChange={handleChange}
+        options={[
+          { value: 'en', label: 'English' },
+          { value: 'vi', label: 'Tiếng Việt' },
+        ]}
+        variant="borderless"
+        dropdownMatchSelectWidth={false}
         className="language-select"
       />
     </div>

@@ -1,34 +1,135 @@
-import React from 'react';
-import { Layout } from 'antd';
-import { Outlet } from 'react-router-dom';
+import React, { useMemo } from 'react';
+import { Layout, Menu, Button } from 'antd';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from '../components/LanguageSelector';
+import { 
+  DashboardOutlined, 
+  ShoppingOutlined, 
+  LogoutOutlined,
+  LoginOutlined,
+  HomeOutlined,
+  UserOutlined
+} from '@ant-design/icons';
+import { useAppDispatch, useAppSelector } from '../hooks/useRedux';
+import { logout } from '../features/auth/authSlice';
+import type { MenuProps } from 'antd';
+import './MainLayout.css';
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const MainLayout: React.FC = () => {
+interface MainLayoutProps {
+  showLoginButton?: boolean;
+}
+
+type MenuItem = Required<MenuProps>['items'][number];
+
+const MainLayout: React.FC<MainLayoutProps> = ({ showLoginButton = false }) => {
   const { t } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { isAuthenticated } = useAppSelector(state => state.auth);
+  
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate('/');
+  };
+  
+  const handleLogin = () => {
+    navigate('/login');
+  };
+
+  // Generate menu items based on authentication status
+  const menuItems = useMemo<MenuItem[]>(() => {
+    const items: MenuItem[] = [];
+    
+    // Home item
+    items.push({
+      key: '/',
+      icon: <HomeOutlined />,
+      label: <Link to="/">{t('menu.home')}</Link>,
+    });
+    
+    // Dashboard item (only for authenticated users)
+    if (isAuthenticated) {
+      items.push({
+        key: '/dashboard',
+        icon: <DashboardOutlined />,
+        label: <Link to="/dashboard">{t('dashboard.title')}</Link>
+      });
+    }
+    
+    // Products submenu
+    const productChildren: MenuItem[] = [];
+    
+    productChildren.push({
+      key: '/products/public',
+      label: <Link to="/products/public">{t('menu.publicProducts')}</Link>,
+    });
+    
+    if (isAuthenticated) {
+      productChildren.push({
+        key: '/products/auth',
+        label: <Link to="/products/auth">{t('menu.authProducts')}</Link>,
+      });
+    }
+    
+    items.push({
+      key: 'products',
+      icon: <ShoppingOutlined />,
+      label: t('menu.products'),
+      children: productChildren
+    });
+    
+    // Logout item (only for authenticated users)
+    if (isAuthenticated) {
+      items.push({
+        key: 'logout',
+        icon: <LogoutOutlined />,
+        label: t('common.logout'),
+        onClick: handleLogout
+      });
+    }
+    
+    return items;
+  }, [isAuthenticated, t, handleLogout]);
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <Header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <div className="logo" style={{ color: 'white', fontSize: '18px', fontWeight: 'bold' }}>
-          {t('common.welcome')}
+    <Layout className="main-layout">
+      <Header className="main-header">
+        <div className="logo" onClick={() => navigate('/')}>
+          MeCAI
         </div>
-        <LanguageSelector />
+        <Menu
+          theme="dark"
+          mode="horizontal"
+          selectedKeys={[location.pathname]}
+          items={menuItems}
+          className="main-menu"
+        />
+        <div className="header-right">
+          <LanguageSelector />
+          {isAuthenticated ? (
+            <Button type="primary" onClick={() => navigate('/profile')}>
+              {t('common.profile')}
+            </Button>
+          ) : (
+            <Button type="primary" onClick={handleLogin}>
+              {t('common.login')}
+            </Button>
+          )}
+        </div>
       </Header>
-      <Layout>
-        <Sider width={200} style={{ background: '#fff' }}>
-          {/* Sidebar menu will go here */}
-        </Sider>
-        <Layout style={{ padding: '24px' }}>
-          <Content style={{ padding: 24, margin: 0, minHeight: 280, background: '#fff' }}>
-            <Outlet />
-          </Content>
-          <Footer style={{ textAlign: 'center' }}>
-            MeCAI ©{new Date().getFullYear()}
-          </Footer>
-        </Layout>
+      <Layout className="site-layout">
+        <div className="layout-content">
+          <Outlet />
+        </div>
+        <Footer className="main-footer">
+          <div className="footer-content">
+            MeCAI ©{new Date().getFullYear()} - {t('footer.allRightsReserved')}
+          </div>
+        </Footer>
       </Layout>
     </Layout>
   );

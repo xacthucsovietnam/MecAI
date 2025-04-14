@@ -1,17 +1,49 @@
-import React from 'react';
-import { Form, Input, Button, Checkbox, Typography, Divider } from 'antd';
+import React, { useEffect } from 'react';
+import { Form, Input, Button, Checkbox, Typography, Divider, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useLoginMutation } from '../../services/authApi';
+import { useAppSelector } from '../../hooks/useRedux';
 
 const { Title, Text } = Typography;
 
+interface LoginFormValues {
+  username: string;
+  password: string;
+  remember: boolean;
+}
+
 const Login: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [login, { isLoading, error }] = useLoginMutation();
+  const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
+  
+  // Get the path to redirect to after login
+  const from = location.state?.from?.pathname || '/';
+  
+  useEffect(() => {
+    // If already authenticated, redirect to home page
+    if (isAuthenticated) {
+      navigate(from, { replace: true });
+    }
+  }, [isAuthenticated, navigate, from]);
 
-  const onFinish = (values: any) => {
-    console.log('Login form submitted:', values);
-    // Will be implemented with actual authentication logic
+  const onFinish = async (values: LoginFormValues) => {
+    try {
+      await login({
+        username: values.username,
+        password: values.password,
+      }).unwrap();
+      
+      message.success(t('notification.messages.loginSuccess'));
+      navigate(from, { replace: true });
+    } catch (err) {
+      console.error('Login failed:', err);
+      message.error(t('notification.messages.loginError'));
+    }
   };
 
   return (
@@ -61,7 +93,13 @@ const Login: React.FC = () => {
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary" htmlType="submit" size="large" block>
+          <Button 
+            type="primary" 
+            htmlType="submit" 
+            size="large" 
+            block 
+            loading={isLoading}
+          >
             {t('common.login')}
           </Button>
         </Form.Item>

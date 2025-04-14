@@ -21,7 +21,11 @@
     "active": "Đã kích hoạt",
     "pending": "Đang chờ",
     "pageNotFound": "Xin lỗi, trang bạn truy cập không tồn tại.",
-    "backHome": "Về trang chủ"
+    "backHome": "Về trang chủ",
+    "public": "Công khai",
+    "authenticated": "Đã xác thực",
+    "reset": "Đặt lại",
+    "profile": "Hồ sơ"
   },
   "auth": {
     "loginTitle": "Đăng nhập vào tài khoản",
@@ -41,6 +45,15 @@
     "summary": "Tổng quan",
     "statistics": "Thống kê",
     "recentActivity": "Hoạt động gần đây"
+  },
+  "menu": {
+    "dashboard": "Bảng điều khiển",
+    "profile": "Hồ sơ",
+    "home": "Trang chủ",
+    "products": "Sản phẩm",
+    "publicProducts": "Sản phẩm công khai",
+    "authProducts": "Sản phẩm đã xác thực",
+    "logout": "Đăng xuất"
   },
   "digitalAuth": {
     "title": "Xác thực số",
@@ -69,7 +82,21 @@
     "name": "Tên sản phẩm",
     "category": "Danh mục",
     "mainCategory": "Danh mục chính",
-    "search": "Tìm kiếm sản phẩm"
+    "search": "Tìm kiếm sản phẩm",
+    "publicDescription": "Duyệt qua danh mục sản phẩm của chúng tôi. Vui lòng đăng nhập để xem sản phẩm đã xác thực.",
+    "image": "Ảnh",
+    "unit": "Đơn vị",
+    "noProducts": "Không có sản phẩm",
+    "price":"Giá",
+    "searchName": "Tên sản phẩm",
+    "selectCategory": "Chọn danh mục",
+    "selectMainCategory": "Chọn danh mục chính"
+  },
+  "categories": {
+    "vegetables": "Rau",
+    "fruit": "Trái cây",
+    "meat": "Thịt",
+    "fish": "Cá"
   },
   "language": {
     "vietnamese": "Tiếng Việt",
@@ -110,5 +137,24 @@
       "registerSuccess": "Tài khoản của bạn đã được tạo thành công",
       "sessionExpired": "Vui lòng đăng nhập lại để tiếp tục"
     }
+  },
+  "buttons": {
+    "viewGrid": "Xem dạng lưới",
+    "viewTable": "Xem dạng bảng",
+    "add": "Thêm mới",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "export": "Xuất dữ liệu",
+    "import": "Nhập dữ liệu",
+    "details": "Xem chi tiết",
+    "print": "In",
+    "refresh": "Làm mới"
+  },
+  "pagination": {
+    "total": "Tổng cộng {total} mục"
+  },
+  "error": {
+    "searchFailed": "Tìm kiếm thất bại",
+    "tryAgain": "Vui lòng thử lại hoặc liên hệ hỗ trợ nếu vấn đề vẫn tiếp tục"
   }
 } 
